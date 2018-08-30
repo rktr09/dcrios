@@ -350,6 +350,7 @@ outgoing and incoming transactions.</string>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
                 <outlet property="containerStackView" destination="x3z-we-xl8" id="z0t-FV-2Rf"/>
+                <outlet property="defaultWalletSwitch" destination="pQl-43-ryM" id="PQe-eA-FzQ"/>
                 <outlet property="labelAccountNoValue" destination="P5V-EW-4kC" id="jYz-th-zz6"/>
                 <outlet property="labelHDPathValue" destination="xys-o1-lj8" id="QIE-zE-pi7"/>
                 <outlet property="labelImmatureRewardValue" destination="7At-AS-vHt" id="j02-Aw-orE"/>
