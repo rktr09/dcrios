@@ -528,7 +528,7 @@
 					DDA3E26920292EF900C83D18 = {
 						CreatedOnToolsVersion = 9.1;
 						LastSwiftMigration = 0940;
-						ProvisioningStyle = Automatic;
+						ProvisioningStyle = Manual;
 					};
 					DDA3E27D20292EF900C83D18 = {
 						CreatedOnToolsVersion = 9.1;
@@ -876,7 +876,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				CODE_SIGN_STYLE = Automatic;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
+				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = CW6QM3K6LP;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -891,7 +892,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.macsleven.Decred-Wallet";
 				PRODUCT_NAME = DecredWallet;
-				PROVISIONING_PROFILE_SPECIFIER = "";
+				PROVISIONING_PROFILE = "bc3c8848-05d7-4693-8585-e644d9328daf";
+				PROVISIONING_PROFILE_SPECIFIER = "Decred-Wallet";
 				SWIFT_OBJC_BRIDGING_HEADER = "decred_wallet/DcrdConnection/decred_wallet-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
@@ -907,7 +909,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				CODE_SIGN_STYLE = Automatic;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
+				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = CW6QM3K6LP;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -922,7 +925,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.macsleven.Decred-Wallet";
 				PRODUCT_NAME = DecredWallet;
-				PROVISIONING_PROFILE_SPECIFIER = "";
+				PROVISIONING_PROFILE = "bc3c8848-05d7-4693-8585-e644d9328daf";
+				PROVISIONING_PROFILE_SPECIFIER = "Decred-Wallet";
 				SWIFT_OBJC_BRIDGING_HEADER = "decred_wallet/DcrdConnection/decred_wallet-Bridging-Header.h";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

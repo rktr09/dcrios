@@ -8,6 +8,8 @@ import UIKit
 
 protocol AccountDetailsCellProtocol {
     func setup(account: AccountsEntity)
+
+    var defaultWalletChanged: (() -> Void)? { get set }
 }
 
 class AccountViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
@@ -125,9 +127,14 @@ class AccountViewController: UIViewController, UITableViewDataSource, UITableVie
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt rowIndex: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "AccountDataCell") as! AccountDetailsCellProtocol
-        print("account creating cells")
+        var cell = tableView.dequeueReusableCell(withIdentifier: "AccountDataCell") as! AccountDetailsCellProtocol
         cell.setup(account: (account!.Acc[rowIndex.row]))
+        
+        cell.defaultWalletChanged = { [weak self] in
+            guard let this = self else { return }
+            this.tableAccountData.reloadData()
+        }
+        
         return cell as! UITableViewCell
     }
 

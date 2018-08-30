@@ -24,13 +24,15 @@ class AccountDataCell: UITableViewCell, AccountDetailsCellProtocol {
     
     private var accountDetails: AccountsEntity?
     
+    var defaultWalletChanged: (() -> Void)?
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
         
-        self.defaultWalletSwitch.addTarget(
+        defaultWalletSwitch.addTarget(
             self,
-            action: #selector(makeWaleltDefault),
+            action: #selector(makeWalelltDefault),
             for: UIControlEvents.valueChanged
         )
     }
@@ -41,8 +43,13 @@ class AccountDataCell: UITableViewCell, AccountDetailsCellProtocol {
         // Configure the view for the selected state
     }
     
-    @objc private func makeWaleltDefault() {
-        accountDetails?.makeDefault()
+    @objc private func makeWalelltDefault() {
+        if defaultWalletSwitch.isOn {
+            accountDetails?.makeDefault()
+        } else {
+            UserDefaults.standard.deleteDefaultAccountNumber()
+        }
+        defaultWalletChanged?()
     }
     
     func setup(account: AccountsEntity) {

@@ -297,7 +297,7 @@ class SendViewController: UIViewController, UITextFieldDelegate, QRCodeReaderVie
             return "\(acc.Name) [\(tspendable) DCR]"
         })!
         
-        let defaultNumber = UserDefaults.standard.defaultAccount
+        let defaultNumber = UserDefaults.standard.defaultAccountNumber
         
         if let defaultAccount = account?.Acc.filter({ $0.Number == defaultNumber }).first {
             let tspendable = spendable(account: defaultAccount)

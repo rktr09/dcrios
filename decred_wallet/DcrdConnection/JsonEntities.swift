@@ -58,11 +58,11 @@ struct AccountsEntity: Decodable {
     var ImportedKeyCount = 0
 
     func makeDefault() {
-        UserDefaults.standard.defaultAccount = self.Number
+        UserDefaults.standard.defaultAccountNumber = self.Number
     }
 
     var isDefaultWallet: Bool {
-        let `default`: Int32 = UserDefaults.standard.defaultAccount
+        let `default`: Int32 = UserDefaults.standard.defaultAccountNumber
 
         return `default` == self.Number ? true : false
     }
@@ -199,7 +199,7 @@ extension GetTransactionResponse {
 }
 
 extension UserDefaults {
-    var defaultAccount: Int32 {
+    var defaultAccountNumber: Int32 {
         get {
             return Int32(self.integer(forKey: "wallet_default"))
         }
@@ -208,5 +208,9 @@ extension UserDefaults {
             self.set(newValue, forKey: "wallet_default")
             self.synchronize()
         }
+    }
+    
+    func deleteDefaultAccountNumber() {
+        self.defaultAccountNumber = -1
     }
 }
